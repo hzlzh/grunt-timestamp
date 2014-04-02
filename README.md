@@ -1,6 +1,6 @@
 ## grunt-timestamp [![NPM version](https://badge.fury.io/js/grunt-timestamp.png)](http://badge.fury.io/js/grunt-timestamp)
 
-> add timestamp to avoid the cache
+> Add timestamp to avoid the cache. (.js/.css files)
 
 **NPM Home Page:** [https://www.npmjs.org/package/grunt-timestamp](https://www.npmjs.org/package/grunt-timestamp)
 
@@ -52,16 +52,12 @@ grunt.initConfig({
     }
     })
 ```
+
+## Coming soon
+
+* Add timestamp at images of CSS style.
+* Rename file name with timestamp inside.
+
 ## License
 
 [MIT](http://rem.mit-license.org/)
-
-
-
-
-
-
-
-
-
-		
