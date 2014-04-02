@@ -1,4 +1,4 @@
-## grunt-timestamp [![NPM version](https://badge.fury.io/js/generator-timestamp.png)](http://badge.fury.io/js/generator-timestamp)
+## grunt-timestamp [![NPM version](https://badge.fury.io/js/grunt-timestamp.png)](http://badge.fury.io/js/grunt-timestamp)
 
 > add timestamp to avoid the cache
 
@@ -20,18 +20,37 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 
 In your project's Gruntfile, add a section named timestamp to the data object passed into grunt.initConfig().
 
-```
+```javascript
 grunt.initConfig({
   timestamp: {
-    timestamp: {
-    	options: {
-    	  // Task-specific options go here.
-    	},
-    	your_target: {
-    	  // Target-specific file lists and/or options go here.
-    	},
-  	},
-})
+      default: {
+        files: [{
+          // Use dynamic extend name
+          expand: true,
+          // Open source dir
+          cwd: 'test/fixtures',
+          // Match files
+          src: ['*.css', '*.js'],
+          // Output files
+          dest: 'test/tmp/',
+          // Set extend middle name
+          ext: '.timestamp'
+        }],
+        options: {
+          // Timestamp display text
+          'timestampName': 'Timetamp',
+          // Date format
+          'timestampFormat': 'yyyy/mm/dd HH:MM:ss',
+          // Add timestamp at the end of the files' content(.css/.js).
+          'fileEndStamp': true,
+          // Add timestamp at images of CSS style.
+          'cssImgStamp': true,
+          // Rename file name with timestamp inside.
+          'fileNameStamp': true
+        }
+      }
+    }
+    })
 ```
 ## License
 
