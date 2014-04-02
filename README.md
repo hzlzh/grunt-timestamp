@@ -1,4 +1,5 @@
-## grunt-timestamp [![NPM version](https://badge.fury.io/js/grunt-timestamp.png)](http://badge.fury.io/js/grunt-timestamp)
+## grunt-timestamp [![NPM version](https://badge.fury.io/js/grunt-timestamp.png)](http://badge.fury.io/js/grunt-timestamp) [![devDependency Status](https://david-dm.org/hzlzh/grunt-timestamp/dev-status.png?theme=shields.io)](https://david-dm.org/hzlzh/grunt-timestamp#info=devDependencies)
+
 
 > Add timestamp to avoid the cache. (.js/.css files)
 
