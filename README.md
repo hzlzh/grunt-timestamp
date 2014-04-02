@@ -2,6 +2,8 @@
 
 > add timestamp to avoid the cache
 
+**NPM Home Page:** [https://www.npmjs.org/package/grunt-timestamp](https://www.npmjs.org/package/grunt-timestamp)
+
 ## Getting Started
 
 This plugin requires Grunt ~0.4.1
@@ -15,8 +17,6 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 	grunt.loadNpmTasks('grunt-timestamp');
 
 ## The "timestamp" task
-
-Overview
 
 In your project's Gruntfile, add a section named timestamp to the data object passed into grunt.initConfig().
 
