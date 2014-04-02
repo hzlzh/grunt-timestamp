@@ -1,7 +1,7 @@
 {
   "name": "grunt-timestamp",
   "description": "add timestamp to avoid the cache.",
-  "version": "0.0.1",
+  "version": "0.0.12",
   "homepage": "https://github.com/hzlzh/grunt-timestamp",
   "author": {
     "name": "hzlzh",

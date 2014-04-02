@@ -33,7 +33,6 @@ module.exports = function(grunt) {
           'timestampName': 'Timetamp',
           // Date format
           'timestampFormat': 'yyyy/mm/dd HH:MM:ss',
-          // 'timestampFormat': 'yyyy/mm/dd HH:MM:ss',
           // Add timestamp at the end of the files' content(.css/.js).
           'fileEndStamp': true,
           // Add timestamp at images of CSS style.
@@ -51,14 +50,11 @@ module.exports = function(grunt) {
     nodeunit: {
       tests: ['test/*_test.js']
     }
-
   });
-
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
-
 
   // load task
   grunt.loadTasks('tasks');
@@ -66,5 +62,4 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['clean', 'timestamp', 'nodeunit']);
   // rename
   grunt.registerTask('default', ['test']);
-
 };

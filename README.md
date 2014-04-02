@@ -23,13 +23,14 @@ In your project's Gruntfile, add a section named timestamp to the data object pa
 ```
 grunt.initConfig({
   timestamp: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
+    timestamp: {
+    	options: {
+    	  // Task-specific options go here.
+    	},
+    	your_target: {
+    	  // Target-specific file lists and/or options go here.
+    	},
+  	},
 })
 ```
 ## License
