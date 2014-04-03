@@ -24,7 +24,7 @@ module.exports = function(grunt) {
           // Match files
           src: ['*.css', '*.js'],
           // Output files
-          dest: 'test/tmp/',
+          dest: 'test/tmp',
           // Set extend middle name
           ext: '.timestamp'
         }],

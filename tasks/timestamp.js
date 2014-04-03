@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                     fileNameList = src.match(regex),
                     fileNameExt = src.match(regexExt),
                     fileName = fileNameList[0].replace(regex, '$1'),
-                    destFile = destDir + fileName + file.orig.ext + fileNameExt,
+                    destFile = destDir + '/' +fileName + file.orig.ext + fileNameExt,
                     timeString = '',
                     sourcedata = grunt.file.read(sourcedataurl);
 
@@ -55,12 +55,11 @@ module.exports = function(grunt) {
                     else if(fileNameExt == '.js')
                         sourcedata += '//' + options.timestampName + ' ' + timeString;
                     if (options.consoleLog)
-                        grunt.log.writeln(color['green']('Timestamp [Done] ') + color[options.color](fileNameList));
+                        grunt.log.writeln(color['green']('Timestamp [Done] ') + fileNameList + ' + ' + color['blue'](timeString));
                 }
 
-                // log(timeString);
-
-                grunt.file.delete(destFile,{force: true});
+                if(grunt.file.exists(destFile))
+                    grunt.file.delete(destFile,{force: true});
                 grunt.file.copy(src, destFile);
                 grunt.file.write(destFile, sourcedata);
 

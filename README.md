@@ -32,7 +32,7 @@ grunt.initConfig({
           // Match files
           src: ['*.css', '*.js'],
           // Output files
-          dest: 'test/tmp/',
+          dest: 'test/tmp',
           // Set extend middle name
           ext: '.timestamp'
         }],
@@ -57,6 +57,7 @@ grunt.initConfig({
 
 ## Release History
 
+* 0.0.7 Fix dest path & remove extra log
 * 0.0.6 Add more type like (sha1 | ha256 | sha512)
 * 0.0.5 `MD5` string stamp supported
 * 0.0.4 Add support to `.js` file
