@@ -1,6 +1,5 @@
 ## grunt-timestamp [![NPM version](https://badge.fury.io/js/grunt-timestamp.png)](http://badge.fury.io/js/grunt-timestamp) [![devDependency Status](https://david-dm.org/hzlzh/grunt-timestamp/dev-status.png?theme=shields.io)](https://david-dm.org/hzlzh/grunt-timestamp#info=devDependencies)
 
-
 > Add timestamp to avoid the cache. (.js/.css files)
 
 **NPM Home Page:** [https://www.npmjs.org/package/grunt-timestamp](https://www.npmjs.org/package/grunt-timestamp)
@@ -43,6 +42,8 @@ grunt.initConfig({
           // Date format
           'timestampFormat': 'yyyy/mm/dd HH:MM:ss',
           // Add timestamp at the end of the files' content(.css/.js).
+          'timestampType': 'md5',
+          // Timestamp type like (time | md5).
           'fileEndStamp': true,
           // Add timestamp at images of CSS style.
           'cssImgStamp': true,
@@ -53,6 +54,12 @@ grunt.initConfig({
     }
     })
 ```
+
+## Release History
+
+* 0.0.5 `MD5` string stamp supported 
+* 0.0.4 Add support to `.js` file
+* 0.0.1 First Release
 
 ## Coming soon
 

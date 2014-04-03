@@ -1,4 +1,5 @@
 var color = require("bash-color");
+var crypto = require('crypto');
 
 module.exports = function(grunt) {
 
@@ -12,8 +13,9 @@ module.exports = function(grunt) {
             log = console.log;
 
         var options = this.options({
-            timestampFormat: 'HH:MM:ss',
             timestampName: 'Timestamp',
+            timestampFormat: 'HH:MM:ss',
+            timestampType: 'md5', // time | md5
             fileEndStamp: false,
             cssImgStamp: false,
             fileNameStamp: false,
@@ -37,16 +39,26 @@ module.exports = function(grunt) {
                     fileNameExt = src.match(regexExt),
                     fileName = fileNameList[0].replace(regex, '$1'),
                     destFile = destDir + fileName + file.orig.ext + fileNameExt,
-                    timeVar = grunt.template.today(options.timestampFormat),
+                    timeString = '',
                     sourcedata = grunt.file.read(sourcedataurl);
 
+                if(options.timestampType == 'time')
+                    timeString = grunt.template.today(options.timestampFormat)
+                else if(options.timestampType == 'md5')
+                    timeString = md5(sourcedata);
+                else
+                    log('Please set a valid `timestampType`.')
+
                 if (options.fileEndStamp) {
-                    sourcedata += '.' + options.timestampName + '{content:"' + timeVar + '"}';
+                    if(fileNameExt == '.css')
+                        sourcedata += '.' + options.timestampName + '{content:"' + timeString + '"}';
+                    else if(fileNameExt == '.js')
+                        sourcedata += '//' + options.timestampName + ' ' + timeString;
                     if (options.consoleLog)
                         grunt.log.writeln(color['green']('Timestamp [Done] ') + color[options.color](fileNameList));
                 }
 
-                log('xxxx');
+                log(md5(sourcedata));
 
                 grunt.file.delete(destFile,{force: true});
                 grunt.file.copy(src, destFile);
@@ -55,6 +67,10 @@ module.exports = function(grunt) {
                 callback(false);
             }
         };
+
+        function md5(content, encoding) {
+            return crypto.createHash('md5').update(content, encoding).digest('hex');
+        }
 
         grunt.util.async.forEachSeries(this.files, _addTimestamp, function(err) {
             done();
