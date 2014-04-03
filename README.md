@@ -1,6 +1,6 @@
 ## grunt-timestamp [![NPM version](https://badge.fury.io/js/grunt-timestamp.png)](http://badge.fury.io/js/grunt-timestamp) [![devDependency Status](https://david-dm.org/hzlzh/grunt-timestamp/dev-status.png?theme=shields.io)](https://david-dm.org/hzlzh/grunt-timestamp#info=devDependencies)
 
-> Add timestamp to avoid the cache. (.js/.css files)
+> Add timestamp & MD5 hash to avoid file cache. (.js/.css files)
 
 **NPM Home Page:** [https://www.npmjs.org/package/grunt-timestamp](https://www.npmjs.org/package/grunt-timestamp)
 
@@ -57,7 +57,8 @@ grunt.initConfig({
 
 ## Release History
 
-* 0.0.5 `MD5` string stamp supported 
+* 0.0.6 Add more type like (sha1 | ha256 | sha512)
+* 0.0.5 `MD5` string stamp supported
 * 0.0.4 Add support to `.js` file
 * 0.0.1 First Release
 

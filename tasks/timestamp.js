@@ -44,8 +44,8 @@ module.exports = function(grunt) {
 
                 if(options.timestampType == 'time')
                     timeString = grunt.template.today(options.timestampFormat)
-                else if(options.timestampType == 'md5')
-                    timeString = md5(sourcedata);
+                else if(options.timestampType == 'sha1' || 'md5' || 'sha256' || 'sha512')
+                    timeString = md5(sourcedata, options.timestampType);
                 else
                     log('Please set a valid `timestampType`.')
 
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
                         grunt.log.writeln(color['green']('Timestamp [Done] ') + color[options.color](fileNameList));
                 }
 
-                log(md5(sourcedata));
+                // log(timeString);
 
                 grunt.file.delete(destFile,{force: true});
                 grunt.file.copy(src, destFile);
@@ -68,8 +68,8 @@ module.exports = function(grunt) {
             }
         };
 
-        function md5(content, encoding) {
-            return crypto.createHash('md5').update(content, encoding).digest('hex');
+        function md5(content, type, encoding) {
+            return crypto.createHash(type).update(content, encoding).digest('hex');
         }
 
         grunt.util.async.forEachSeries(this.files, _addTimestamp, function(err) {

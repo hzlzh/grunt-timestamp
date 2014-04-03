@@ -35,7 +35,7 @@ module.exports = function(grunt) {
           'timestampFormat': 'yyyy/mm/dd HH:MM:ss',
           // Add timestamp at the end of the files' content(.css/.js).
           'timestampType': 'md5',
-          // Timestamp type like (time | md5).
+          // Timestamp type like (time | md5/sha1/sha256/sha512).
           'fileEndStamp': true,
           // Add timestamp at images of CSS style.
           'cssImgStamp': true,
