@@ -43,7 +43,7 @@ grunt.initConfig({
           'timestampFormat': 'yyyy/mm/dd HH:MM:ss',
           // Add timestamp at the end of the files' content(.css/.js).
           'timestampType': 'md5',
-          // Timestamp type like (time | md5).
+          // Timestamp type like time(2014/04/02 22:17:07) | md5/sha1/ha256/sha512).
           'fileEndStamp': true,
           // Add timestamp at images of CSS style.
           'cssImgStamp': true,
