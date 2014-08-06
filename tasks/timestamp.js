@@ -51,9 +51,9 @@ module.exports = function(grunt) {
 
                 if (options.fileEndStamp) {
                     if(fileNameExt == '.css')
-                        sourcedata += '.' + options.timestampName + '{content:"' + timeString + '"}';
+                        sourcedata = '.' + options.timestampName + '{content:"' + timeString + '"}' + sourcedata;
                     else if(fileNameExt == '.js')
-                        sourcedata += '//' + options.timestampName + ' ' + timeString;
+                        sourcedata = '/*' + options.timestampName + ' ' + timeString + "*/" +sourcedata;
                     if (options.consoleLog)
                         grunt.log.writeln(color['green']('Timestamp [Done] ') + fileNameList + ' + ' + color['blue'](timeString));
                 }
