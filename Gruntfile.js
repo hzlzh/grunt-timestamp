@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         }],
         options: {
           // Timestamp display text
-          'timestampName': 'Timetamp',
+          'timestampName': 'Timestamp',
           // Date format
           'timestampFormat': 'yyyy/mm/dd HH:MM:ss',
           // Add timestamp at the end of the files' content(.css/.js).
